@@ -2,7 +2,7 @@
 def fetch_count_test_cases():
     test_cases = int(input("Aantal test cases: "))
 
-    while (test_cases > 50):
+    while not (test_cases > 0 and test_cases <= 50):
         test_cases = int(input("Aantal test cases moeten <= 50 zijn: "))
     
     return test_cases
@@ -11,7 +11,7 @@ def fetch_test_case(number):
     test_case = int(input("Test case {}: ".format(number)))
 
     while not (test_case > 0 and test_case <= 100):
-        test_case = int(input("De test case moet boven de 0 en onder de 101 zijn: "))
+        test_case = int(input("De test case moet boven de 0 en onder de 100 zijn: "))
 
     return test_case
 
@@ -37,7 +37,7 @@ def test_case_divisible_sum(test_case):
         if (ans % test_case == 0 and sum == test_case):
             return ans
 
-        ans += 1
+        ans += test_case
 
 def main():
     amount = fetch_count_test_cases()
