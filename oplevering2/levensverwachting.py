@@ -1,5 +1,5 @@
-def levensverwachting(geslacht, roker=, sport=2, alcohol=10, fastfood=True):
-    leeftijd = 70
+def levensverwachting(geslacht: str, roker: bool, sport: int, alcohol: int, fastfood: bool) -> float:
+    leeftijd = 70.0
 
     # Geslacht
     if (geslacht == 'vrouw'):
@@ -19,3 +19,13 @@ def levensverwachting(geslacht, roker=, sport=2, alcohol=10, fastfood=True):
         leeftijd += 3
 
     return leeftijd
+
+def main():
+    print(levensverwachting(geslacht='man', roker=True, sport=2, alcohol=10, fastfood=True))
+    print(levensverwachting(geslacht='man', roker=True, sport=5, alcohol=5, fastfood=True))
+    print(levensverwachting(geslacht='vrouw', roker=False, sport=5, alcohol=0, fastfood=False))
+    print(levensverwachting(geslacht='vrouw', roker=False, sport=3, alcohol=14, fastfood=True))
+    print(levensverwachting(geslacht='man', roker=False, sport=4, alcohol=4, fastfood=False))
+
+if __name__ == "__main__":
+    main()
