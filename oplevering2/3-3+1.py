@@ -16,7 +16,7 @@ def groeperen(prijzen):
 
     for x in range(math.ceil(len(prijzen) / 4)):
         start = x * 4
-        end = (x + 1) * 4
+        end = start + 4
 
         groeperingen.append(tuple(prijzen[start:end]))
 
