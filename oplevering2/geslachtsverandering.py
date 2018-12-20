@@ -1,6 +1,4 @@
-import re
-
-def vertaal(woord, vertalingen):
+def vertaal(woord: str, vertalingen: dict) -> str:
     # Geen vertaling gevonden, geef het woord terug
     if woord.lower() not in vertalingen:
         return woord
@@ -19,7 +17,7 @@ def vertaal(woord, vertalingen):
     else:
         return vertaling.lower()
 
-def geslachtsverandering(zin, vertalingen):
+def geslachtsverandering(zin: str, vertalingen: dict) -> str:
     zin_lower = zin.lower()
 
     # Loop linear door de zin heen en split op niet alpha characters
@@ -47,7 +45,7 @@ def geslachtsverandering(zin, vertalingen):
 
     return ''.join(woorden)
 
-def geslachtsherstel(zin, vertalingen):
+def geslachtsherstel(zin: str, vertalingen: str) -> str:
     inv_vertalingen = {}
 
     for k, v in vertalingen.items():
@@ -55,7 +53,7 @@ def geslachtsherstel(zin, vertalingen):
 
     return geslachtsverandering(zin, inv_vertalingen)
 
-if __name__ == "__main__":
+def main() -> None:
     vertalingen = {'hij':'zij', 'broer':'zus'}
 
     print(vertaal('hij', vertalingen))
@@ -66,3 +64,6 @@ if __name__ == "__main__":
 
     print(geslachtsverandering('Hij is mijn broer.', vertalingen))
     print(geslachtsherstel('Zij is mijn zus.', vertalingen))
+
+if __name__ == "__main__":
+    main()

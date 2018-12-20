@@ -1,6 +1,6 @@
 import math
 
-def samen(prijzen):
+def samen(prijzen) -> float:
     prijzen = list(prijzen)
     item_to_remove = math.floor(len(prijzen) / 4)
 
@@ -10,7 +10,7 @@ def samen(prijzen):
 
     return round(sum(prijzen), 2)
 
-def groeperen(prijzen):
+def groeperen(prijzen) -> float:
     prijzen.sort(reverse=True)
     groeperingen = []
 
@@ -22,7 +22,7 @@ def groeperen(prijzen):
 
     return groeperingen
 
-def gegroepeerd(prijzen):
+def gegroepeerd(prijzen) -> float:
     groeperingen = groeperen(prijzen)
     som = 0
 
@@ -31,10 +31,10 @@ def gegroepeerd(prijzen):
 
     return som
 
-def winst(prijzen):
+def winst(prijzen: list) -> float:
     return round(samen(prijzen) - gegroepeerd(prijzen), 2)
 
-if __name__ == "__main__":
+def main() -> None:
     prijzen = [3.23, 5.32, 8.23, 2.23, 9.98, 7.43, 6.43, 8.23, 4.23]
 
     print(samen(prijzen))
@@ -46,3 +46,5 @@ if __name__ == "__main__":
     print(winst(prijzen))
 
 
+if __name__ == "__main__":
+    main()

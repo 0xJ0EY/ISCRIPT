@@ -1,4 +1,4 @@
-def T9(string):
+def T9(word: str):
     result = []
 
     lookup_table = {
@@ -12,15 +12,25 @@ def T9(string):
         'V': 9, 'W': 9, 'Y': 9, 'Z': 9
     }
 
-    for char in string:
+    for char in word:
         result.append(str(value_from_table(char, lookup_table)))
 
     return ''.join(result)
 
-def value_from_table(key, table):
+def value_from_table(key: str, table: dict) -> int:
     ans = table[key.upper()]
 
     return ans if ans > 0 else 0
 
-def GSMoniemen(a, b):
+def GSMoniemen(a: str , b: str) -> bool:
     return T9(a) == T9(b)
+
+def main() -> None:
+    print(T9('Hallo'))
+    print(T9('aanbod'))
+    print(T9('bamboe'))
+    print(GSMoniemen('aanbod', 'bamboe'))
+    print(GSMoniemen('maandag', 'vrijdag'))
+
+if __name__ == "__main__":
+    main()
