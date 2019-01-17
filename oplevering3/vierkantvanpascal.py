@@ -26,9 +26,9 @@ def paden(m, n = 1):
         for y in range(m):
             line += repr(matrix[x][y]).rjust(1 + length)
 
-        output.append(line)
+        output.append(line + '\n')
 
-    return '\n'.join(output) 
+    return ''.join(output)
 
 def main():
     print(paden(3))
